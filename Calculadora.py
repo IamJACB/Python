@@ -25,8 +25,7 @@ root.config(height=600, width=600)
 opciones = IntVar()
 
 frame= Frame(root)
-frame.pack(expand=)
-
+frame.pack()
 
 
 imagen = PhotoImage(file="2.gif")
@@ -71,8 +70,8 @@ label1 = Label(root, text="Elige un  genero")
 label1.pack()
 label1.config(bg="Aquamarine")
 
-Radiobutton(root, text="Masculino", variable=opciones, value=1, command=mostrar).pack()
-Radiobutton(root, text="Femenino", variable=opciones, value=2, command=mostrar).pack()
+Radiobutton(root, text="Masculino", variable=opciones, value=1, command=mostrar).pack(side=LEFT)
+Radiobutton(root, text="Femenino", variable=opciones, value=2, command=mostrar).pack(side=RIGHT)
 
 label2=Label(root)
 label2.pack()
