@@ -2,11 +2,13 @@ from tkinter import *
 
 root = Tk()
 root.title("Interfaz grafica de python")
-root.geometry("400x600")
+root.geometry("600x600")
 
 productos = Label(root, text="Productos")
 productos.pack()
 
+queso = IntVar()
+lechuga = IntVar()
 
 def agregar():
     listaProductos.insert(END, entrada.get())
@@ -25,7 +27,6 @@ listaProductos.insert(3, "Jugo")
 listaProductos.pack()
 
 
-
 #Eliminar un producto
 #listaProductos.delete(0)
 
@@ -39,8 +40,17 @@ boton1 = Button(root, text="Eliminar", bd=10, command=eliminar)
 boton1.pack()
 
 imagen = PhotoImage(file="h.gif")
-Label(root, image=imagen).pack()
+Label(root, image=imagen).pack(side=LEFT)
 
+frame = Frame(root)
+frame.pack(side=RIGHT)
+frame.config(bg="goldenrod3")
 
+Label(frame, text="Como quieres tu hamburguesa " , bg="goldenrod3", font="Curier 15").pack(anchor="w")
+Checkbutton(frame, text="Con Queso", variable=queso, onvalue=1, offvalue=0, bg="goldenrod3", font="Curier 15").pack(anchor="w")
+Checkbutton(frame, text="Con Lechuga", variable=lechuga, onvalue=1, offvalue=0, bg="goldenrod3", font="Curier 15").pack(anchor="w")
+
+imprimir = Label(frame, bg="goldenrod3")
+imprimir.pack()
 
 root.mainloop()
