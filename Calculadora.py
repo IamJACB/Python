@@ -1,5 +1,12 @@
 from tkinter import *
 
+
+def mostrar ():
+    if opciones.get()==1:
+        label2.config(text="Haz elegido masculino")
+    else:
+        label2.config(text="Haz elegido Femenino")
+
 def sumar():
     resultado.set(int(var1.get()) + int(var2.get()))
 
@@ -57,9 +64,14 @@ boton4 = Button(frame, text="Multiplicar")
 boton4.pack()
 boton4.config(bd=5, bg="red", font=("Curier, 10"), command=multiplicar)
 
+label1 = Label(root, text="Elige un  genero")
+label1.pack()
+label1.config(bg="Aquamarine")
 
-Radiobutton(root, text="Masculino", variable=opciones, value=1).pack()
-Radiobutton(root, text="Femenino", variable=opciones, value=2).pack()
+Radiobutton(root, text="Masculino", variable=opciones, value=1, command=mostrar).pack()
+Radiobutton(root, text="Femenino", variable=opciones, value=2, command=mostrar).pack()
 
+label2=Label(root)
+label2.pack()
 
 root.mainloop()
