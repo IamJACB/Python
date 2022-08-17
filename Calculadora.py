@@ -66,7 +66,7 @@ boton4 = Button(frame, text="Multiplicar")
 boton4.pack()
 boton4.config(bd=5, bg="red", font=("Curier, 10"), command=multiplicar)
 
-label1 = Label(root, text="Elige un  genero")
+label1 = Label(root, text="Elige un genero")
 label1.pack()
 label1.config(bg="Aquamarine")
 
