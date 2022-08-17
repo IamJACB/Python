@@ -21,15 +21,18 @@ def multiplicar():
 
 root = Tk() 
 root.title("Interfaz grafica de python")
+root.config(height=600, width=600)
 opciones = IntVar()
 
 frame= Frame(root)
-frame.config(width=600, height=600)
-frame.pack()
+frame.pack(expand=)
+
+
 
 imagen = PhotoImage(file="2.gif")
 label = Label(frame, image=imagen, cursor="pirate")
 label.pack()
+
 
 var1 = StringVar()
 var2 = StringVar()
