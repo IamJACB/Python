@@ -1,7 +1,8 @@
 from tkinter import *
 
 root = Tk()
-root.geometry("400x400")
+root.title("Interfaz grafica de python")
+root.geometry("400x600")
 
 productos = Label(root, text="Productos")
 productos.pack()
@@ -9,6 +10,7 @@ productos.pack()
 
 def agregar():
     listaProductos.insert(END, entrada.get())
+    entrada.clipboard_clear()
 
 def eliminar():
     e = listaProductos.curselection()
@@ -36,7 +38,8 @@ boton.pack()
 boton1 = Button(root, text="Eliminar", bd=10, command=eliminar)
 boton1.pack()
 
-
+imagen = PhotoImage(file="h.gif")
+Label(root, image=imagen).pack()
 
 
 
