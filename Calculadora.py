@@ -14,12 +14,14 @@ def multiplicar():
 
 root = Tk() 
 root.title("Interfaz grafica de python")
+opciones = IntVar()
 
 frame= Frame(root)
+frame.config(width=600, height=600)
 frame.pack()
 
 imagen = PhotoImage(file="2.gif")
-label = Label(frame, image=imagen)
+label = Label(frame, image=imagen, cursor="pirate")
 label.pack()
 
 var1 = StringVar()
@@ -28,15 +30,15 @@ resultado = StringVar()
 
 entrada1 = Entry(frame)
 entrada1.pack()
-entrada1.config(bd=10, bg="Aquamarine", font=("Curier, 10"), textvariable=var1)
+entrada1.config(bd=5, bg="Aquamarine", font=("Curier, 10"), textvariable=var1)
 
 entrada2 = Entry(frame)
 entrada2.pack()
-entrada2.config(bd=10, bg="Aquamarine", font=("Curier, 10"), textvariable=var2)
+entrada2.config(bd=5, bg="Aquamarine", font=("Curier, 10"), textvariable=var2)
 
 entrada3 = Entry(frame)
 entrada3.pack()
-entrada3.config(bd=10,  font=("Curier, 10"), textvariable=resultado, state="disable")
+entrada3.config(bd=5,  font=("Curier, 10"), textvariable=resultado, state="disable")
 
 boton1 = Button(frame, text="Sumar")
 boton1.pack()
@@ -50,12 +52,14 @@ boton3 = Button(frame, text="Dividir")
 boton3.pack()
 boton3.config(bd=5, bg="red", font=("Curier, 10"), command=dividir)
 
+
 boton4 = Button(frame, text="Multiplicar")
 boton4.pack()
 boton4.config(bd=5, bg="red", font=("Curier, 10"), command=multiplicar)
 
 
-
+Radiobutton(root, text="Masculino", variable=opciones, value=1).pack()
+Radiobutton(root, text="Femenino", variable=opciones, value=2).pack()
 
 
 root.mainloop()
