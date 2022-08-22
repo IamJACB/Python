@@ -1,6 +1,5 @@
 from tkinter import *
 
-
 def mostrar ():
     if opciones.get()==1:
         label2.config(text="Haz elegido masculino")
@@ -23,6 +22,28 @@ root = Tk()
 root.title("Interfaz grafica de python")
 root.config(height=600, width=600)
 opciones = IntVar()
+
+barraMenu = Menu(root)
+root.config(menu=barraMenu)
+
+archivoMenu = Menu(barraMenu, tearoff=0)
+barraMenu.add_cascade(label="Archivo", menu=archivoMenu)
+archivoMenu.add_command(label="Nuevo Archivo")
+archivoMenu.add_command(label="Nueva Ventana")
+archivoMenu.add_separator()
+archivoMenu.add_command(label="Salir")
+
+archivoEditar = Menu(barraMenu, tearoff=0)
+barraMenu.add_cascade(label="Editar", menu=archivoEditar)
+archivoEditar.add_command(label="Deshacer")
+archivoEditar.add_command(label="Rehacer")
+
+
+archivoAyuda = Menu(barraMenu, tearoff=0)
+barraMenu.add_cascade(label="Ayuda", menu=archivoAyuda)
+archivoAyuda.add_command(label="Acerca de...")
+archivoAyuda.add_command(label="Ver Licencia...")
+
 
 frame= Frame(root)
 frame.pack()
