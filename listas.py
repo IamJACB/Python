@@ -18,6 +18,19 @@ def eliminar():
     e = listaProductos.curselection()
     listaProductos.delete(e)
 
+def orden():
+    lista=""
+    if(queso.get()):
+        lista += "Con queso"
+    else:
+        lista += "Sin queso"
+    
+    if(lechuga.get()):
+        lista += "Con lechuga"
+    else:
+        lista += "Sin lechuga"
+    imprimir.config(text=lista)
+
 #Listar productos - crea una lista con unos productos
 listaProductos = Listbox(root, width=50)
 listaProductos.insert(0, "Carne")
@@ -47,10 +60,11 @@ frame.pack(side=RIGHT)
 frame.config(bg="goldenrod3")
 
 Label(frame, text="Como quieres tu hamburguesa " , bg="goldenrod3", font="Curier 15").pack(anchor="w")
-Checkbutton(frame, text="Con Queso", variable=queso, onvalue=1, offvalue=0, bg="goldenrod3", font="Curier 15").pack(anchor="w")
-Checkbutton(frame, text="Con Lechuga", variable=lechuga, onvalue=1, offvalue=0, bg="goldenrod3", font="Curier 15").pack(anchor="w")
+Checkbutton(frame, text="Con Queso", variable=queso, onvalue=1, offvalue=0, bg="goldenrod3", font="Curier 15", command="orden").pack(anchor="w")
+Checkbutton(frame, text="Con Lechuga", variable=lechuga, onvalue=1, offvalue=0, bg="goldenrod3", font="Curier 15", command="orden").pack(anchor="w")
 
-imprimir = Label(frame, bg="goldenrod3")
+imprimir = Label(frame, bg="red")
 imprimir.pack()
+imprimir.config(font="Curier 10")
 
 root.mainloop()
