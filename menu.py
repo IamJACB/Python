@@ -18,15 +18,19 @@ def error():
 def deshacer():
     messagebox.askquestion("Seguro?", "Desea deshacer los cambios?")
 
+def abrir():
+    archivo1=filedialog.askopenfilename(title="abrir", initialdir="Descargas")
+    print(archivo1)
 
 root = Tk()
+root.geometry("400x300")
 
 barraMenu = Menu(root)
 root.config(menu=barraMenu)
 
 archivoMenu = Menu(barraMenu, tearoff=0)
 barraMenu.add_cascade(label="Archivo", menu=archivoMenu)
-archivoMenu.add_command(label="Nuevo Archivo")
+archivoMenu.add_command(label="Abrir Archivo", command=abrir)
 archivoMenu.add_command(label="Nueva Ventana", command=error)
 archivoMenu.add_separator()
 archivoMenu.add_command(label="Salir", command=salir)
