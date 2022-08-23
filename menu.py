@@ -19,7 +19,7 @@ def deshacer():
     messagebox.askquestion("Seguro?", "Desea deshacer los cambios?")
 
 def abrir():
-    archivo1=filedialog.askopenfilename(title="abrir", initialdir="Descargas")
+    archivo1=filedialog.askopenfilename(title="abrir", initialdir="Descargas", filetypes=((("Archivos pdf", "*.pdf")),("Archivo de texto","*.txt")))
     print(archivo1)
 
 root = Tk()
