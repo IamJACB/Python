@@ -2,7 +2,7 @@ from tkinter import *
 from tkinter import messagebox, filedialog
 
 root = Tk()
-root.geometry("350x300")
+root.geometry("340x300")
 root.title("Calculadora")
 
 i = 0
@@ -68,25 +68,40 @@ archivoAyuda.add_command(label="Ver Licencia", command=licencia)
 #Entrada de datos 
 
 entrada = Entry(root, font="Curier 20")
+entrada.config(bd=5)
 entrada.grid(row=0, column=0, columnspan=4, padx=5, pady=5)
 
 #Creacion de botones
 
 boton1= Button(root, text="1", width=5, height=2, command=lambda:click(1))
+boton1.config(bd="2", bg="aquamarine")
 boton2= Button(root, text="2", width=5, height=2, command=lambda:click(2))
+boton2.config(bd="2", bg="aquamarine")
 boton3= Button(root, text="3", width=5, height=2, command=lambda:click(3))
+boton3.config(bd="2", bg="aquamarine")
 boton4= Button(root, text="4", width=5, height=2, command=lambda:click(4))
+boton4.config(bd="2", bg="aquamarine")
 boton5= Button(root, text="5", width=5, height=2, command=lambda:click(5))
+boton5.config(bd="2", bg="aquamarine")
 boton6= Button(root, text="6", width=5, height=2, command=lambda:click(6))
+boton6.config(bd="2", bg="aquamarine")
 boton7= Button(root, text="7", width=5, height=2, command=lambda:click(7))
+boton7.config(bd="2", bg="aquamarine")
 boton8= Button(root, text="8", width=5, height=2, command=lambda:click(8))
+boton8.config(bd="2", bg="aquamarine")
 boton9= Button(root, text="9", width=5, height=2, command=lambda:click(9))
-boton0= Button(root, text="0", width=16, height=2, command=lambda:click())
+boton9.config(bd="2", bg="aquamarine")
+boton0= Button(root, text="0", width=16, height=2, command=lambda:click(0))
+boton0.config(bd="2", bg="aquamarine")
 
 boton_borrar= Button(root, text="Borrar", width=5, height=2, command=lambda:borrar())
+boton_borrar.config(bd="2", bg="red")
 boton_parentesis1= Button(root, text="(", width=5, height=2, command=lambda:click("("))
+boton_parentesis1.config(bd="2", bg="red")
 boton_parentesis2= Button(root, text=")", width=5, height=2, command=lambda:click(")"))
+boton_parentesis2.config(bd="2", bg="red")
 boton_punto= Button(root, text=".", width=5, height=2, command=lambda:click("."))
+boton_punto.config(bd="2", bg="aquamarine")
 
 boton_suma= Button(root, text="+", width=5, height=2, command=lambda:click("+"))
 boton_resta= Button(root, text="-", width=5, height=2, command=lambda:click("-"))
