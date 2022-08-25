@@ -1,5 +1,7 @@
+import tkinter as tk
 from tkinter import *
 from tkinter import messagebox, filedialog
+from tkinter.colorchooser import askcolor
 
 root = Tk()
 root.geometry("330x310")
