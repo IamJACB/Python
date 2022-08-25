@@ -2,7 +2,7 @@ from tkinter import *
 from tkinter import messagebox, filedialog
 
 root = Tk()
-root.geometry("340x300")
+root.geometry("330x310")
 root.title("Calculadora")
 
 i = 0
@@ -68,7 +68,7 @@ archivoAyuda.add_command(label="Ver Licencia", command=licencia)
 #Entrada de datos 
 
 entrada = Entry(root, font="Curier 20")
-entrada.config(bd=5)
+entrada.config(bd=5, relief="sunken")
 entrada.grid(row=0, column=0, columnspan=4, padx=5, pady=5)
 
 #Creacion de botones
@@ -104,10 +104,15 @@ boton_punto= Button(root, text=".", width=5, height=2, command=lambda:click(".")
 boton_punto.config(bd="2", bg="aquamarine")
 
 boton_suma= Button(root, text="+", width=5, height=2, command=lambda:click("+"))
+boton_suma.config(bd="2", bg="purple")
 boton_resta= Button(root, text="-", width=5, height=2, command=lambda:click("-"))
+boton_resta.config(bd="2", bg="purple")
 boton_div= Button(root, text="/", width=5, height=2, command=lambda:click("/"))
+boton_div.config(bd="2", bg="purple")
 boton_mult= Button(root, text="*", width=5, height=2, command=lambda:click("*"))
+boton_mult.config(bd="2", bg="purple")
 boton_igual= Button(root, text="=", width=5, height=2, command=lambda:operaciones())
+boton_igual.config(bd="2", bg="purple")
 
 #Colocar botones
 
