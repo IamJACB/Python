@@ -1,12 +1,15 @@
-import barcode
-from barcode.writer import ImageWriter
-from barcode import EAN13
-
-number = input("Ingrese codigo")
+import pyqrcode
+import png
+from PIL import Image
 
 
-my_barcode = EAN13(number, writer=ImageWriter())
-
-my_barcode.save("Codigo generado")
 
 
+link = input("Ingrese cualquier cosa: ")
+qr_code = pyqrcode.create(link)
+qr_code.png("Qrcode.png", scale=5)
+
+Image.open("Qrcode.png")
+
+
+ 
